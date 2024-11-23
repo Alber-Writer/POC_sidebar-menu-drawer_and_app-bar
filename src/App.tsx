@@ -1,5 +1,7 @@
+import ExampleScene from '@/scenes/example.scene';
+
 function App() {
-  return <h1>Hello!</h1>;
+  return <ExampleScene />;
 }
 
 export default App;
