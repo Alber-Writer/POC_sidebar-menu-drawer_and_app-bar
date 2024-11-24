@@ -1,10 +1,5 @@
-import * as React from 'react';
 import { styled, Theme, CSSObject } from '@mui/material/styles';
-import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
-
-import CssBaseline from '@mui/material/CssBaseline';
-import { MenuItems } from './menu-items';
 
 const drawerWidth = 240;
 
@@ -31,7 +26,7 @@ const closedMixin = (theme: Theme): CSSObject => ({
   },
 });
 
-const Drawer = styled(MuiDrawer, {
+export const Drawer = styled(MuiDrawer, {
   shouldForwardProp: prop => prop !== 'open',
 })(({ theme }) => ({
   width: drawerWidth,
@@ -56,25 +51,3 @@ const Drawer = styled(MuiDrawer, {
     },
   ],
 }));
-
-interface Props {
-  open?: boolean;
-  children?: React.ReactNode;
-}
-
-export default function DrawerMenu(props: Props) {
-  const {children, open} = props;
-  return (
-    <Box display={'flex'} height={'100%'}>
-      <CssBaseline />
-      <Drawer variant="permanent" open={open}>
-        <MenuItems open />
-      </Drawer>
-      <Box component="main" overflow={'auto'} height={'93dvh'} flexGrow={1} p={5}>
-        {children}
-      </Box>
-    </Box>
-  );
-}
-
-

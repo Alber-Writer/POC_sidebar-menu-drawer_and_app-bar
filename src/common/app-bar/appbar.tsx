@@ -5,15 +5,16 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 
-interface AppBarProps extends MuiAppBarProps {
+interface Props extends MuiAppBarProps {
   open?: boolean;
   handleMenu: () => void;
+  barHeight: number
 }
 
-export const AppBar = (props: AppBarProps) => {
+export const AppBar = (props: Props) => {
   return (
-    <MuiAppBar position='relative' elevation={1} color='primary'>
-      <Toolbar>
+    <MuiAppBar position='relative' elevation={1} color={'primary'}>
+      <Toolbar sx={{height:`${props.barHeight || 7}dvh`}}>
       <IconButton
           color="inherit"
           aria-label="open drawer"
@@ -29,7 +30,7 @@ export const AppBar = (props: AppBarProps) => {
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" noWrap component="h3">
-          Responsive drawer
+          POC Responsive layout with drawer
         </Typography>
       </Toolbar>
     </MuiAppBar>

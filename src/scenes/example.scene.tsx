@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Box } from '@mui/material';
-import { MainLayout } from '@/layout/main.layout';
+import { MainLayout } from '@/layouts/main/main.layout';
 import MockContents from './mock-contents';
 
-export const ExampleScene = ()=> {
+export const ExampleScene = () => {
   return (
     <>
       <MainLayout>
@@ -16,26 +17,13 @@ export const ExampleScene = ()=> {
           padding={1}
           paddingTop={5}
         >
-          <Box minWidth={700} height={300}>
-            <MockContents />
-          </Box>
-          <Box minWidth={700} height={300}>
-            <MockContents />
-          </Box>
-          <Box minWidth={700} height={300}>
-            <MockContents />
-          </Box>
-          <Box minWidth={700} height={300}>
-            <MockContents />
-          </Box>
-          <Box minWidth={700} height={300}>
-            <MockContents />
-          </Box>
-          <Box minWidth={700} height={300}>
-            <MockContents />
-          </Box>
+          {Array(5).fill('').map(_table => (
+            <Box minWidth={700} height={300}>
+              <MockContents />
+            </Box>
+          ))}
         </Box>
       </MainLayout>
     </>
   );
-}
+};

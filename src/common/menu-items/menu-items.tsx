@@ -9,7 +9,7 @@ import List from '@mui/material/List';
 export const MenuItems = ({ open }: { open: boolean | undefined }) => {
   return (
     <List>
-      {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+      {['Principal', 'Section A', 'Section B', 'Etc'].map((text, index) => (
         <ListItem key={text} disablePadding sx={{ display: 'block' }}>
           <ListItemButton
             sx={[
