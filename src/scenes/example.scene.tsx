@@ -2,7 +2,7 @@ import { Box } from '@mui/material';
 import { MainLayout } from '@/layout/main.layout';
 import MockContents from './mock-contents';
 
-function ExampleScene() {
+export const ExampleScene = ()=> {
   return (
     <>
       <MainLayout>
@@ -26,5 +26,3 @@ function ExampleScene() {
     </>
   );
 }
-
-export default ExampleScene;
