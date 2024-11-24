@@ -8,17 +8,30 @@ export const ExampleScene = ()=> {
       <MainLayout>
         <Box
           display={'flex'}
-          justifyContent={'space-evenly'}
+          justifyContent={'center'}
           flexDirection={'row'}
-          gap={4}
-          maxWidth={'70%'}
+          flexWrap={'wrap'}
+          gap={10}
           minWidth={600}
           padding={1}
+          paddingTop={5}
         >
-          <Box minWidth={800} height={300}>
+          <Box minWidth={700} height={300}>
             <MockContents />
           </Box>
-          <Box minWidth={800} height={300}>
+          <Box minWidth={700} height={300}>
+            <MockContents />
+          </Box>
+          <Box minWidth={700} height={300}>
+            <MockContents />
+          </Box>
+          <Box minWidth={700} height={300}>
+            <MockContents />
+          </Box>
+          <Box minWidth={700} height={300}>
+            <MockContents />
+          </Box>
+          <Box minWidth={700} height={300}>
             <MockContents />
           </Box>
         </Box>

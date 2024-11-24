@@ -13,10 +13,10 @@ export const MainLayout = ({ children }: Props) => {
     setOpen(!open);
   };
   return (
-    <Box display={'flex'} flexDirection={'column'}>
-      <AppBar handleMenu={toggleDrawer} open></AppBar>
-      <Box sx={{ flexGrow: 1 }}>
-        <DrawerMenu>{children}</DrawerMenu>
+    <Box display={'flex'} flexDirection={'column'} height={'100dvh'} overflow={'hidden'}>
+      <AppBar handleMenu={toggleDrawer} open={open}></AppBar>
+      <Box flexGrow={1} bgcolor={'whitesmoke'} flexBasis={'100%'}>
+        <DrawerMenu open={open}>{children}</DrawerMenu>
       </Box>
     </Box>
   );

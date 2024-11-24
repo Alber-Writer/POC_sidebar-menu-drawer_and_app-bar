@@ -12,9 +12,9 @@ interface AppBarProps extends MuiAppBarProps {
 
 export const AppBar = (props: AppBarProps) => {
   return (
-    <MuiAppBar>
+    <MuiAppBar position='relative' elevation={1} color='primary'>
       <Toolbar>
-        <IconButton
+      <IconButton
           color="inherit"
           aria-label="open drawer"
           onClick={props.handleMenu}
@@ -29,7 +29,7 @@ export const AppBar = (props: AppBarProps) => {
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" noWrap component="h3">
-          Mini variant drawer
+          Responsive drawer
         </Typography>
       </Toolbar>
     </MuiAppBar>

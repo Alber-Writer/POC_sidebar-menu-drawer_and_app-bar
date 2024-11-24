@@ -1,4 +1,4 @@
-import ExampleScene from '@/scenes/example.scene';
+import {ExampleScene} from '@/scenes/example.scene';
 
 function App() {
   return <ExampleScene />;

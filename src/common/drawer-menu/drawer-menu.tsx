@@ -10,6 +10,7 @@ const drawerWidth = 240;
 
 const openedMixin = (theme: Theme): CSSObject => ({
   width: drawerWidth,
+  position:'relative',
   transition: theme.transitions.create('width', {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.enteringScreen,
@@ -18,6 +19,7 @@ const openedMixin = (theme: Theme): CSSObject => ({
 });
 
 const closedMixin = (theme: Theme): CSSObject => ({
+  position:'relative',
   transition: theme.transitions.create('width', {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
@@ -33,6 +35,7 @@ const Drawer = styled(MuiDrawer, {
   shouldForwardProp: prop => prop !== 'open',
 })(({ theme }) => ({
   width: drawerWidth,
+  position:'relative',
   flexShrink: 0,
   whiteSpace: 'nowrap',
   boxSizing: 'border-box',
@@ -61,14 +64,13 @@ interface Props {
 
 export default function DrawerMenu(props: Props) {
   const {children, open} = props;
-
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box display={'flex'} height={'100%'}>
       <CssBaseline />
       <Drawer variant="permanent" open={open}>
         <MenuItems open />
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+      <Box component="main" overflow={'auto'} height={'93dvh'} flexGrow={1} p={5}>
         {children}
       </Box>
     </Box>

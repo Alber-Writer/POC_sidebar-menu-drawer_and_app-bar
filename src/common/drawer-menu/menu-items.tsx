@@ -6,7 +6,7 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import List from '@mui/material/List';
 
-export const MenuItems = ({ open }: { open: boolean }) => {
+export const MenuItems = ({ open }: { open: boolean | undefined }) => {
   return (
     <List>
       {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
