@@ -17,8 +17,9 @@ export const ExampleScene = () => {
           padding={1}
           paddingTop={5}
         >
-          {Array(5).fill('').map(_table => (
-            <Box minWidth={700} height={300}>
+          {Array(5).fill('').map((_table,index) => (
+            //We use index as key because this is just mock data
+            <Box minWidth={700} height={300} key={index}>
               <MockContents />
             </Box>
           ))}
