@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Box } from '@mui/material';
 import { MainLayout } from '@/layouts/main/main.layout';
 import MockContents from './mock-contents';
