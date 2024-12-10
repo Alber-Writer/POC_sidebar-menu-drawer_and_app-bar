@@ -1,9 +1,9 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
 
 import CssBaseline from '@mui/material/CssBaseline';
 import { MenuItems } from '@/common/menu-items/menu-items';
-import { Drawer } from './drawer-animations.utils';
+import { Drawer } from './drawer';
+import { container, main } from './drawer-and-content.styles';
 
 interface Props {
   open?: boolean;
@@ -14,20 +14,15 @@ interface Props {
 export default function DrawerAndContent(props: Props) {
   const { open, children, contentVisibleHeight } = props;
   return (
-    <Box display={'flex'} height={'100%'} position={'relative'}>
+    <div className={container}>
       <CssBaseline />
-      <Drawer variant="permanent" open={open}>
+      <Drawer open={open}>
         <MenuItems open />
       </Drawer>
-      <Box
-        component="main"
-        overflow={'auto'}
-        height={`${contentVisibleHeight}dvh`}
-        flexGrow={1}
-        p={5}
+      <div className={main(contentVisibleHeight)}
       >
         {children}
-      </Box>
-    </Box>
+      </div>
+    </div>
   );
 }
